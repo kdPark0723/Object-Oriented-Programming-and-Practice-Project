@@ -4,7 +4,7 @@ public interface Matrix extends Cloneable {
     class Size {
         public int row, col;
 
-        public Size(int row, int col) {
+        public Size(int col, int row) {
             this.row = row;
             this.col = col;
         }
@@ -24,9 +24,9 @@ public interface Matrix extends Cloneable {
         }
     }
 
-    Scalar get(int row, int col);
+    Scalar get(int col, int row);
 
-    void set(int row, int col, Scalar value);
+    void set(int col, int row, Scalar value);
 
     void clear(Scalar value);
 
@@ -43,6 +43,18 @@ public interface Matrix extends Cloneable {
     }
 
     void add(Matrix rhs) throws CalculateNotSupportedException;
+
+    static Matrix mul(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+        try {
+            Matrix result = (Matrix)lhs.clone();
+            result.mul(rhs);
+            return result;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
+
+    void mul(Matrix rhs) throws CalculateNotSupportedException;
 
     static Matrix addRowVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         try {
@@ -67,18 +79,6 @@ public interface Matrix extends Cloneable {
     }
 
     void addColVector(Matrix rhs) throws CalculateNotSupportedException;
-
-    static Matrix mul(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        try {
-            Matrix result = (Matrix)lhs.clone();
-            result.mul(rhs);
-            return result;
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
-
-    void mul(Matrix rhs) throws CalculateNotSupportedException;
 
     Vector row(int rowIndex);
 

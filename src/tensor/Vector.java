@@ -5,9 +5,9 @@ public interface Vector extends Cloneable {
 
     void set(int index, Scalar value);
 
-    void set(Vector coped);
-
-    void swap(Vector swapped);
+//    void set(Vector coped);
+//
+//    void swap(Vector swapped);
 
     void clear(Scalar value);
 
