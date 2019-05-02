@@ -1,14 +1,6 @@
 package tensor;
 
 public class Tensors {
-    public static Scalar scalarClone(Scalar origin) throws CloneNotSupportedException {
-        return (Scalar)(origin.clone());
-    }
-
-    public static Vector vectorClone(Vector origin) throws CloneNotSupportedException {
-        return (Vector)(origin.clone());
-    }
-
     public static Scalar scalarAdd(Scalar lhs, Scalar rhs) {
         return Scalar.add(lhs, rhs);
     }
@@ -23,5 +15,13 @@ public class Tensors {
 
     public static Vector vectorMul(Vector lhs, Scalar rhs) {
         return Vector.mul(lhs, rhs);
+    }
+
+    public static Matrix MatrixAddRowVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+        return Matrix.addRowVector(lhs, rhs);
+    }
+
+    public static Matrix MatrixAddColVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+        return Matrix.addColVector(lhs, rhs);
     }
 }

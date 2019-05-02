@@ -90,6 +90,8 @@ public interface Matrix extends Cloneable {
 
     Matrix transpose();
 
+    Scalar trace();
+
     void swapRow(int i, int j);
 
     void swapCol(int i, int j);
@@ -98,7 +100,17 @@ public interface Matrix extends Cloneable {
 
     boolean isRREF();
 
-    double determinant();
+    boolean isSquare();
+
+    boolean isUpperTriangular();
+
+    boolean isLowerTriangular();
+
+    boolean isIdentity();
+
+    boolean isZero();
+
+    Scalar determinant();
 
     Matrix inverse();
 
