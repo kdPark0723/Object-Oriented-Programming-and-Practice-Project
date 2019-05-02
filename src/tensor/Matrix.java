@@ -84,17 +84,17 @@ public interface Matrix extends Cloneable {
 
     Vector col(int colIndex);
 
-    Matrix subMatrix(Range row, Range col);
-
-    Matrix minor(int removedRow, int removedCol);
-
-    Matrix transpose();
-
-    Scalar trace();
-
     void swapRow(int i, int j);
 
     void swapCol(int i, int j);
+
+    Matrix subMatrix(Range col, Range row);
+
+    Matrix minor(int removedCol, int removedRow);
+
+    Matrix transpose();
+
+    Scalar trace() throws CalculateNotSupportedException;
 
     Matrix getRREF();
 
