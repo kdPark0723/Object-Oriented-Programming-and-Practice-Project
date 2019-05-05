@@ -7,13 +7,7 @@ public interface Scalar extends Comparable<Scalar>, Cloneable {
     void set(Double value);
 
     static Scalar add(Scalar lhs, Scalar rhs) {
-        try {
-            Scalar result = (Scalar)lhs.clone();
-            result.add(rhs);
-            return result;
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
+        return null;
     }
 
     void add(Scalar rhs);
