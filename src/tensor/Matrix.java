@@ -58,17 +58,17 @@ public interface Matrix extends Cloneable {
 
     void mul(Matrix rhs) throws CalculateNotSupportedException;
 
-    static Matrix concatAsRow(Matrix lhs, Matrix rhs) {
+    static Matrix concatAsRow(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return null;
     }
 
-    Matrix concatAsRow(Matrix rhs);
+    Matrix concatAsRow(Matrix rhs) throws CalculateNotSupportedException;
 
-    static Matrix concatAsCol(Matrix lhs, Matrix rhs) {
+    static Matrix concatAsCol(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return null;
     }
 
-    Matrix concatAsCol(Matrix rhs);
+    Matrix concatAsCol(Matrix rhs) throws CalculateNotSupportedException;
 
     static Matrix addRowVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         try {
