@@ -6,7 +6,7 @@ public interface Matrix extends Cloneable {
     class Size {
         public int row, col;
 
-        public Size(int col, int row) {
+        public Size(int row, int col) {
             this.row = row;
             this.col = col;
         }
@@ -30,11 +30,11 @@ public interface Matrix extends Cloneable {
         return null;
     }
 
-    static Matrix createMatrixFromInitialValue(int colSize, int rowSize, Scalar initialValue) throws SizeLessThanZeroException {
+    static Matrix createMatrixFromInitialValue(int rowSize, int colSize, Scalar initialValue) throws SizeLessThanZeroException {
         return null;
     }
 
-    static Matrix createMatrixFromRandomValue(int colSize, int rowSize, Scalar minValue, Scalar maxValue) throws SizeLessThanZeroException {
+    static Matrix createMatrixFromRandomValue(int rowSize, int colSize, Scalar minValue, Scalar maxValue) throws SizeLessThanZeroException {
         return null;
     }
 
@@ -46,9 +46,9 @@ public interface Matrix extends Cloneable {
         return null;
     }
 
-    Scalar get(int col, int row) throws IndexOutOfBoundsException;
+    Scalar get(int row, int col) throws IndexOutOfBoundsException;
 
-    void set(int col, int row, Scalar value) throws IndexOutOfBoundsException;
+    void set(int row, int col, Scalar value) throws IndexOutOfBoundsException;
 
     void clear(Scalar value);
 
@@ -77,6 +77,14 @@ public interface Matrix extends Cloneable {
     }
 
     void mul(Matrix rhs) throws CalculateNotSupportedException;
+
+    static Matrix concatAsRow(Matrix lhs, Matrix rhs) {
+        return null;
+    }
+
+    static Matrix concatAsCol(Matrix lhs, Matrix rhs) {
+        return null;
+    }
 
     static Matrix addRowVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         try {
@@ -110,9 +118,9 @@ public interface Matrix extends Cloneable {
 
     void swapCol(int i, int j) throws IndexOutOfBoundsException;
 
-    Matrix getSub(Range col, Range row) throws IndexOutOfBoundsException;
+    Matrix getSub(Range row, Range col) throws IndexOutOfBoundsException;
 
-    Matrix getMinor(int removedCol, int removedRow) throws IndexOutOfBoundsException;
+    Matrix getMinor(int removedRow, int removedCol) throws IndexOutOfBoundsException;
 
     Matrix getTranspose();
 
