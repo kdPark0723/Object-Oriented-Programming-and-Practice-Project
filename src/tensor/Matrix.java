@@ -26,26 +26,6 @@ public interface Matrix extends Cloneable {
         }
     }
 
-    static Matrix createIdentityMatrix(int size) throws SizeLessThanZeroException {
-        return null;
-    }
-
-    static Matrix createMatrixFromInitialValue(int rowSize, int colSize, Scalar initialValue) throws SizeLessThanZeroException {
-        return null;
-    }
-
-    static Matrix createMatrixFromRandomValue(int rowSize, int colSize, Scalar minValue, Scalar maxValue) throws SizeLessThanZeroException {
-        return null;
-    }
-
-    static Matrix createMatrixFromCSVFile(String csvFilePath) throws SizeLessThanZeroException, WrongCSVFormatException, FileNotFoundException {
-        return null;
-    }
-
-    static Matrix createMatrixFromArray(Scalar[][] array) {
-        return null;
-    }
-
     Scalar get(int row, int col) throws IndexOutOfBoundsException;
 
     void set(int row, int col, Scalar value) throws IndexOutOfBoundsException;
