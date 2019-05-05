@@ -37,9 +37,9 @@ public interface Vector extends Cloneable {
 
     void mul(Scalar rhs);
 
-    Object clone() throws CloneNotSupportedException;
-
     Matrix toMatrix1xN();
 
     Matrix toMatrixNx1();
+
+    Object clone() throws CloneNotSupportedException;
 }
