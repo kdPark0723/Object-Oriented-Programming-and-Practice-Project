@@ -24,9 +24,29 @@ public interface Matrix extends Cloneable {
         }
     }
 
-    Scalar get(int col, int row);
+    static Matrix createIdentityMatrix(int size) throws SizeLessThanZeroException {
+        return null;
+    }
 
-    void set(int col, int row, Scalar value);
+    static Matrix createMatrixFromInitialValue(int colSize, int rowSize, Scalar initialValue) throws SizeLessThanZeroException {
+        return null;
+    }
+
+    static Matrix createMatrixFromRandomValue(int colSize, int rowSize, Scalar minValue, Scalar maxValue) throws SizeLessThanZeroException {
+        return null;
+    }
+
+    static Matrix createMatrixFromCSVFile(String csvFilePath) throws SizeLessThanZeroException, WrongCSVFormatException {
+        return null;
+    }
+
+    static Matrix createMatrixFromArray(Scalar[][] array) {
+        return null;
+    }
+
+    Scalar get(int col, int row) throws IndexOutOfBoundException;
+
+    void set(int col, int row, Scalar value) throws IndexOutOfBoundException;
 
     void clear(Scalar value);
 
@@ -80,21 +100,21 @@ public interface Matrix extends Cloneable {
 
     void addColVector(Matrix rhs) throws CalculateNotSupportedException;
 
-    Vector row(int rowIndex);
+    Vector getRow(int rowIndex) throws IndexOutOfBoundException;
 
-    Vector col(int colIndex);
+    Vector getCol(int colIndex) throws IndexOutOfBoundException;
 
-    void swapRow(int i, int j);
+    void swapRow(int i, int j) throws IndexOutOfBoundException;
 
-    void swapCol(int i, int j);
+    void swapCol(int i, int j) throws IndexOutOfBoundException;
 
-    Matrix subMatrix(Range col, Range row);
+    Matrix getSub(Range col, Range row) throws IndexOutOfBoundException;
 
-    Matrix minor(int removedCol, int removedRow);
+    Matrix getMinor(int removedCol, int removedRow) throws IndexOutOfBoundException;
 
-    Matrix transpose();
+    Matrix getTranspose();
 
-    Scalar trace() throws CalculateNotSupportedException;
+    Scalar getTrace() throws CalculateNotSupportedException;
 
     Matrix getRREF();
 
@@ -110,9 +130,9 @@ public interface Matrix extends Cloneable {
 
     boolean isZero();
 
-    Scalar determinant();
+    Scalar getDeterminant();
 
-    Matrix inverse();
+    Matrix getInverse();
 
     Object clone() throws CloneNotSupportedException;
 }

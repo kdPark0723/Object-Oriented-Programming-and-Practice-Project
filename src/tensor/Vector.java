@@ -1,11 +1,23 @@
 package tensor;
 
 public interface Vector extends Cloneable {
-    Scalar get(int index);
+    static Vector createVectorFromInitialValue(int size, Scalar initValue) throws SizeLessThanZeroException {
+        return null;
+    }
 
-    void set(int index, Scalar value);
+    static Vector createVectorFromRandomValue(int size, Scalar minValue, Scalar maxValue) throws SizeLessThanZeroException {
+        return null;
+    }
 
-    void set(Vector coped);
+    static Vector createVectorFromArray(Scalar[] array) throws SizeLessThanZeroException {
+        return null;
+    }
+
+    Scalar get(int index) throws IndexOutOfBoundException;
+
+    void set(int index, Scalar value) throws IndexOutOfBoundException;
+
+    void set(Vector weekCoped);
 
     void swap(Vector swapped);
 
