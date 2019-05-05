@@ -62,9 +62,13 @@ public interface Matrix extends Cloneable {
         return null;
     }
 
+    Matrix concatAsRow(Matrix rhs);
+
     static Matrix concatAsCol(Matrix lhs, Matrix rhs) {
         return null;
     }
+
+    Matrix concatAsCol(Matrix rhs);
 
     static Matrix addRowVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         try {
