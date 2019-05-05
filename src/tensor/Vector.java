@@ -14,25 +14,13 @@ public interface Vector extends Cloneable {
     int size();
 
     static Vector add(Vector lhs, Vector rhs) throws CalculateNotSupportedException {
-        try {
-            Vector result = (Vector)lhs.clone();
-            result.add(rhs);
-            return result;
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
+        return null;
     }
 
     void add(Vector rhs) throws CalculateNotSupportedException;
 
     static Vector mul(Vector lhs, Scalar rhs) {
-        try {
-            Vector result = (Vector)lhs.clone();
-            result.mul(rhs);
-            return result;
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
+        return null;
     }
 
     void mul(Scalar rhs);
