@@ -1,5 +1,7 @@
 package tensor;
 
+import java.io.FileNotFoundException;
+
 public interface Matrix extends Cloneable {
     class Size {
         public int row, col;
@@ -36,7 +38,7 @@ public interface Matrix extends Cloneable {
         return null;
     }
 
-    static Matrix createMatrixFromCSVFile(String csvFilePath) throws SizeLessThanZeroException, WrongCSVFormatException {
+    static Matrix createMatrixFromCSVFile(String csvFilePath) throws SizeLessThanZeroException, WrongCSVFormatException, FileNotFoundException {
         return null;
     }
 
@@ -44,9 +46,9 @@ public interface Matrix extends Cloneable {
         return null;
     }
 
-    Scalar get(int col, int row) throws IndexOutOfBoundException;
+    Scalar get(int col, int row) throws IndexOutOfBoundsException;
 
-    void set(int col, int row, Scalar value) throws IndexOutOfBoundException;
+    void set(int col, int row, Scalar value) throws IndexOutOfBoundsException;
 
     void clear(Scalar value);
 
@@ -100,17 +102,17 @@ public interface Matrix extends Cloneable {
 
     void addColVector(Matrix rhs) throws CalculateNotSupportedException;
 
-    Vector getRow(int rowIndex) throws IndexOutOfBoundException;
+    Vector getRow(int rowIndex) throws IndexOutOfBoundsException;
 
-    Vector getCol(int colIndex) throws IndexOutOfBoundException;
+    Vector getCol(int colIndex) throws IndexOutOfBoundsException;
 
-    void swapRow(int i, int j) throws IndexOutOfBoundException;
+    void swapRow(int i, int j) throws IndexOutOfBoundsException;
 
-    void swapCol(int i, int j) throws IndexOutOfBoundException;
+    void swapCol(int i, int j) throws IndexOutOfBoundsException;
 
-    Matrix getSub(Range col, Range row) throws IndexOutOfBoundException;
+    Matrix getSub(Range col, Range row) throws IndexOutOfBoundsException;
 
-    Matrix getMinor(int removedCol, int removedRow) throws IndexOutOfBoundException;
+    Matrix getMinor(int removedCol, int removedRow) throws IndexOutOfBoundsException;
 
     Matrix getTranspose();
 

@@ -13,9 +13,9 @@ public interface Vector extends Cloneable {
         return null;
     }
 
-    Scalar get(int index) throws IndexOutOfBoundException;
+    Scalar get(int index) throws IndexOutOfBoundsException;
 
-    void set(int index, Scalar value) throws IndexOutOfBoundException;
+    void set(int index, Scalar value) throws IndexOutOfBoundsException;
 
     void set(Vector weekCoped);
 
