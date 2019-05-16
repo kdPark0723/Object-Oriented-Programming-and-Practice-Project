@@ -78,6 +78,14 @@ public interface Matrix extends Cloneable {
 
     void swapCol(int i, int j) throws IndexOutOfBoundsException;
 
+    void mulRow(int index, Scalar multiply) throws IndexOutOfBoundsException;
+
+    void mulCol(int index, Scalar multiply) throws IndexOutOfBoundsException;
+
+    void mulRowAndAddOther(int destination, int source, Scalar multiply) throws IndexOutOfBoundsException;
+
+    void mulColAndAddOther(int destination, int source, Scalar multiply) throws IndexOutOfBoundsException;
+
     Matrix getSub(Range row, Range col) throws IndexOutOfBoundsException;
 
     Matrix getMinor(int removedRow, int removedCol) throws IndexOutOfBoundsException;
