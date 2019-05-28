@@ -36,14 +36,14 @@ public interface Matrix extends Cloneable {
         return null;
     }
 
-    void addByLeft(Matrix rhs) throws CalculateNotSupportedException;
-    void addByRight(Matrix rhs) throws CalculateNotSupportedException;
+    void add(Matrix rhs) throws CalculateNotSupportedException;
 
     static Matrix mul(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return null;
     }
 
-    void mul(Matrix rhs) throws CalculateNotSupportedException;
+    void mulByLeft(Matrix rhs) throws CalculateNotSupportedException;
+    void mulByRight(Matrix rhs) throws CalculateNotSupportedException;
 
     static Matrix concatAsRow(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return null;
@@ -58,7 +58,13 @@ public interface Matrix extends Cloneable {
     Matrix concatAsCol(Matrix rhs) throws CalculateNotSupportedException;
 
     static Matrix addRowVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        return null;
+        try {
+            Matrix result = (Matrix)lhs.clone();
+            result.addRowVector(rhs);
+            return result;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
     }
 
     void addRowVector(Matrix rhs) throws CalculateNotSupportedException;
