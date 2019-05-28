@@ -29,11 +29,11 @@ public class Factory {
         return null;
     }
 
-    public static Matrix createMatrixFromInitialValue(int col, int row, Scalar initValue) throws SizeLessThanZeroException {
+    public static Matrix createMatrixFromInitialValue(int row, int col, Scalar initValue) throws SizeLessThanZeroException {
         return null;
     }
 
-    public static Matrix createMatrixFromRandomValue(int col, int row, Scalar minValue, Scalar maxValue) throws SizeLessThanZeroException {
+    public static Matrix createMatrixFromRandomValue(int row, int col, Scalar minValue, Scalar maxValue) throws SizeLessThanZeroException {
         return null;
     }
 
