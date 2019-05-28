@@ -137,7 +137,7 @@ public interface Matrix extends Cloneable {
 
     boolean isLowerTriangular() throws CalculateNotSupportedException;
 
-    boolean isIdentity();
+    boolean isIdentity() throws CalculateNotSupportedException;
 
     boolean isZero();
 
