@@ -1,7 +1,5 @@
 package tensor;
 
-import java.io.FileNotFoundException;
-
 public interface Matrix extends Cloneable {
     class Size {
         public int row, col;
@@ -38,7 +36,8 @@ public interface Matrix extends Cloneable {
         return null;
     }
 
-    void add(Matrix rhs) throws CalculateNotSupportedException;
+    void addByLeft(Matrix rhs) throws CalculateNotSupportedException;
+    void addByRight(Matrix rhs) throws CalculateNotSupportedException;
 
     static Matrix mul(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return null;
