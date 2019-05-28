@@ -24,4 +24,13 @@ public class Tensors {
     public static Matrix MatrixAddColVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return Matrix.addColVector(lhs, rhs);
     }
+
+    public static Matrix MatrixConcatAsCol(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+        return Matrix.concatAsCol(lhs, rhs);
+    }
+
+    public static Matrix MatrixConcatAsRow(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+        return Matrix.concatAsRow(lhs, rhs);
+    }
+
 }
