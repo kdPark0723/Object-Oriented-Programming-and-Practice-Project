@@ -79,30 +79,6 @@ public interface Matrix extends Cloneable {
 
     Matrix concatAsCol(Matrix rhs) throws CalculateNotSupportedException;
 
-    static Matrix addRowVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        try {
-            Matrix result = (Matrix)lhs.clone();
-            result.addRowVector(rhs);
-            return result;
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
-
-    void addRowVector(Matrix rhs) throws CalculateNotSupportedException;
-
-    static Matrix addColVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        try {
-            Matrix result = (Matrix)lhs.clone();
-            result.addColVector(rhs);
-            return result;
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
-
-    void addColVector(Matrix rhs) throws CalculateNotSupportedException;
-
     Vector getRow(int rowIndex) throws IndexOutOfBoundsException;
 
     Vector getCol(int colIndex) throws IndexOutOfBoundsException;

@@ -17,14 +17,6 @@ public class Tensors {
         return Vector.mul(lhs, rhs);
     }
 
-    public static Matrix MatrixAddRowVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        return Matrix.addRowVector(lhs, rhs);
-    }
-
-    public static Matrix MatrixAddColVector(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        return Matrix.addColVector(lhs, rhs);
-    }
-
     public static Matrix MatrixConcatAsCol(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return Matrix.concatAsCol(lhs, rhs);
     }
