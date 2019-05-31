@@ -9,12 +9,20 @@ public class Tensors {
         return Scalar.mul(lhs, rhs);
     }
 
-    public static Vector vectorAdd(Vector lhs, Vector rhs) {
+    public static Vector vectorAdd(Vector lhs, Vector rhs) throws CalculateNotSupportedException {
         return Vector.add(lhs, rhs);
     }
 
-    public static Vector vectorMul(Vector lhs, Scalar rhs) {
+    public static Vector vectorMul(Vector lhs, Scalar rhs) throws CalculateNotSupportedException {
         return Vector.mul(lhs, rhs);
+    }
+
+    public static Matrix MatrixAdd(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+        return Matrix.add(lhs, rhs);
+    }
+
+    public static Matrix MatrixMul(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+        return Matrix.mul(lhs, rhs);
     }
 
     public static Matrix MatrixConcatAsCol(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
