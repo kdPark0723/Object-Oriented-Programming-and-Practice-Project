@@ -17,19 +17,19 @@ public class Tensors {
         return Vector.mul(lhs, rhs);
     }
 
-    public static Matrix MatrixAdd(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+    public static Matrix matrixAdd(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return Matrix.add(lhs, rhs);
     }
 
-    public static Matrix MatrixMul(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+    public static Matrix matrixMul(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return Matrix.mul(lhs, rhs);
     }
 
-    public static Matrix MatrixConcatAsCol(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+    public static Matrix matrixConcatAsCol(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return Matrix.concatAsCol(lhs, rhs);
     }
 
-    public static Matrix MatrixConcatAsRow(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
+    public static Matrix matrixConcatAsRow(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         return Matrix.concatAsRow(lhs, rhs);
     }
 
