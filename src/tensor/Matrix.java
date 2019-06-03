@@ -24,14 +24,6 @@ public interface Matrix extends Cloneable {
         }
     }
 
-    Scalar get(int row, int col) throws IndexOutOfBoundsException;
-
-    void set(int row, int col, Scalar value) throws IndexOutOfBoundsException;
-
-    void clear(Scalar value);
-
-    Size size();
-
     static Matrix add(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
         try {
             Matrix result = (Matrix)lhs.clone();
@@ -79,10 +71,6 @@ public interface Matrix extends Cloneable {
 
     Matrix concatAsCol(Matrix rhs) throws CalculateNotSupportedException;
 
-    Vector getRow(int rowIndex) throws IndexOutOfBoundsException;
-
-    Vector getCol(int colIndex) throws IndexOutOfBoundsException;
-
     void swapRow(int i, int j) throws IndexOutOfBoundsException;
 
     void swapCol(int i, int j) throws IndexOutOfBoundsException;
@@ -95,6 +83,12 @@ public interface Matrix extends Cloneable {
 
     void mulColAndAddOther(int destination, int source, Scalar multiply) throws IndexOutOfBoundsException;
 
+    Scalar get(int row, int col) throws IndexOutOfBoundsException;
+
+    Vector getRow(int rowIndex) throws IndexOutOfBoundsException;
+
+    Vector getCol(int colIndex) throws IndexOutOfBoundsException;
+
     Matrix getSub(Range row, Range col) throws IndexOutOfBoundsException;
 
     Matrix getMinor(int removedRow, int removedCol) throws IndexOutOfBoundsException;
@@ -104,6 +98,12 @@ public interface Matrix extends Cloneable {
     Scalar getTrace() throws CalculateNotSupportedException;
 
     Matrix getRREF();
+
+    Scalar getDeterminant() throws CalculateNotSupportedException;
+
+    Matrix getInverse() throws CalculateNotSupportedException;
+
+    void set(int row, int col, Scalar value) throws IndexOutOfBoundsException;
 
     boolean isRREF();
 
@@ -117,9 +117,9 @@ public interface Matrix extends Cloneable {
 
     boolean isZero();
 
-    Scalar getDeterminant() throws CalculateNotSupportedException;
-
-    Matrix getInverse() throws CalculateNotSupportedException;
-
     Object clone() throws CloneNotSupportedException;
+
+    void clear(Scalar value);
+
+    Size size();
 }
