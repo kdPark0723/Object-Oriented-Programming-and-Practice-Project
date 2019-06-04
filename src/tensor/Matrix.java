@@ -24,73 +24,29 @@ public interface Matrix extends Cloneable {
         }
     }
 
-    static Matrix add(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        try {
-            Matrix result = (Matrix)lhs.clone();
-            result.add(rhs);
-            return result;
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
-
     void add(Matrix rhs) throws CalculateNotSupportedException;
-
-    static Matrix mul(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        try {
-            Matrix result = (Matrix)lhs.clone();
-            result.mulByRight(rhs);
-            return result;
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
 
     void mulByLeft(Matrix rhs) throws CalculateNotSupportedException;
     void mulByRight(Matrix rhs) throws CalculateNotSupportedException;
 
-    static Matrix concatAsRow(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        try {
-            Matrix result = (Matrix)lhs.clone();
-            return result.concatAsRow(rhs);
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
-
     Matrix concatAsRow(Matrix rhs) throws CalculateNotSupportedException;
-
-    static Matrix concatAsCol(Matrix lhs, Matrix rhs) throws CalculateNotSupportedException {
-        try {
-            Matrix result = (Matrix)lhs.clone();
-            return result.concatAsCol(rhs);
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
-
     Matrix concatAsCol(Matrix rhs) throws CalculateNotSupportedException;
 
     void swapRow(int i, int j) throws IndexOutOfBoundsException;
-
     void swapCol(int i, int j) throws IndexOutOfBoundsException;
 
     void mulRow(int index, Scalar multiply) throws IndexOutOfBoundsException;
-
     void mulCol(int index, Scalar multiply) throws IndexOutOfBoundsException;
 
     void mulRowAndAddOther(int destination, int source, Scalar multiply) throws IndexOutOfBoundsException;
-
     void mulColAndAddOther(int destination, int source, Scalar multiply) throws IndexOutOfBoundsException;
 
     Scalar get(int row, int col) throws IndexOutOfBoundsException;
 
     Vector getRow(int rowIndex) throws IndexOutOfBoundsException;
-
     Vector getCol(int colIndex) throws IndexOutOfBoundsException;
 
     Matrix getSub(Range row, Range col) throws IndexOutOfBoundsException;
-
     Matrix getMinor(int removedRow, int removedCol) throws IndexOutOfBoundsException;
 
     Matrix getTranspose();
@@ -110,7 +66,6 @@ public interface Matrix extends Cloneable {
     boolean isSquare();
 
     boolean isUpperTriangular() throws CalculateNotSupportedException;
-
     boolean isLowerTriangular() throws CalculateNotSupportedException;
 
     boolean isIdentity() throws CalculateNotSupportedException;
