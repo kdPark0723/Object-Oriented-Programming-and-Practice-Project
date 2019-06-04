@@ -4,7 +4,7 @@ import tensor.Factory;
 import tensor.Scalar;
 import tensor.Tensors;
 
-public class ScalarTest extends BaseTest {
+class ScalarTest extends BaseTest {
     ScalarTest() {
         addBasicFunctionTests("스칼라의 기본 기능");
         addCalculateTests("스칼라의 연산");
@@ -24,7 +24,6 @@ public class ScalarTest extends BaseTest {
         test.addTest("객체를 콘솔에 출력할 수 있다", () -> {
             Scalar dummy = Factory.createScalarFromInitialValue(1.0);
             test.assertEquals(dummy.toString(), "1.0", "toString의 결과 값이 예측한 것과 동일하다");
-
         });
 
         test.addTest("객체의 동등성 판단을 할 수 있다", () -> {
@@ -64,14 +63,14 @@ public class ScalarTest extends BaseTest {
             test.assertEquals(dummy, Factory.createScalarFromInitialValue(2.0), "스칼라의 곱셈의 결과가 예상하던 것과 같다");
         });
 
-        test.addTest("스칼라는 다른 스칼라와 덧셈이 가능하다 (static)", () -> {
+        test.addTest("전달받은 두 스칼라의 덧셈이 가능하다", () -> {
             Scalar dummy = Factory.createScalarFromInitialValue(1.0);
 
             test.assertEquals(Tensors.scalarAdd(dummy, Factory.createScalarFromInitialValue(1.0)), Factory.createScalarFromInitialValue(2.0), "스칼라의 덧셈의 결과가 예상하던 것과 같다");
 
         });
 
-        test.addTest("스칼라는 다른 스칼라와 곱셈이 가능하다 (static)", () -> {
+        test.addTest("전달받은 두 스칼라의 곱셈이 가능하다", () -> {
             Scalar dummy = Factory.createScalarFromInitialValue(1.0);
 
             test.assertEquals(Tensors.scalarMul(dummy, Factory.createScalarFromInitialValue(1.0)), Factory.createScalarFromInitialValue(1.0), "스칼라의 곱셈의 결과가 예상하던 것과 같다");
