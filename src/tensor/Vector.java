@@ -8,7 +8,6 @@ public interface Vector extends Cloneable {
     Scalar get(int index) throws IndexOutOfBoundsException;
 
     void set(int index, Scalar value) throws IndexOutOfBoundsException;
-    void set(Vector weekCoped);
 
     void swap(Vector swapped);
 
