@@ -72,7 +72,7 @@ public interface Matrix extends Cloneable {
 
     boolean isZero();
 
-    Object clone() throws CloneNotSupportedException;
+    Object clone();
 
     void clear(Scalar value);
 

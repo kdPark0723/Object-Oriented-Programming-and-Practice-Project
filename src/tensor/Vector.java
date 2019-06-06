@@ -11,7 +11,7 @@ public interface Vector extends Cloneable {
 
     void clear(Scalar value);
 
-    Object clone() throws CloneNotSupportedException;
+    Object clone();
 
     Matrix toMatrix1xN();
     Matrix toMatrixNx1();
