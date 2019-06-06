@@ -1,9 +1,6 @@
 package test;
 
-import tensor.Factory;
-import tensor.Matrix;
-import tensor.Scalar;
-import tensor.Vector;
+import tensor.*;
 
 public class FactoryTest extends BaseTest{
     FactoryTest() {
@@ -63,8 +60,15 @@ public class FactoryTest extends BaseTest{
         });
 
         test.addTest("csv 파일로부터 m x n 행렬을 생성할 수 있다", () -> {
-            Matrix matrixCreatedByFile = Factory.createMatrixFromCSVFile("src/test/dummyMatrix.csv");
+            Matrix matrixCreatedByFile = Factory.createMatrixFromCSVFile("src/test/passDummyMatrix.csv");
             test.assertTrue(true, "예외 없이 행렬이 생성됨");
+
+            try {
+                Factory.createMatrixFromCSVFile("src/test/failDummyMatrix.csv");
+                test.assertTrue(false, "잘못된 형식에도 정상적으로 생성됨");
+            } catch (WrongCSVFormatException e) {
+                test.assertTrue(true, "잘못된 형식에 예외를 던짐");
+            }
         });
 
         test.addTest("2차원 배열로부터 m x n 행렬을 생성할 수 있다", () -> {
