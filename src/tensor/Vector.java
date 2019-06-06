@@ -9,8 +9,6 @@ public interface Vector extends Cloneable {
 
     void set(int index, Scalar value) throws IndexOutOfBoundsException;
 
-    void swap(Vector swapped);
-
     void clear(Scalar value);
 
     Object clone() throws CloneNotSupportedException;
