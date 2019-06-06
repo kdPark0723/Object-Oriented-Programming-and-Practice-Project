@@ -320,7 +320,7 @@ class MatrixTest extends BaseTest {
                 dummy.isUpperTriangular();
                 test.assertTrue(false, "사각 향렬일때 연산에 성공했다.");
             } catch (CalculateNotSupportedException e) {
-                test.assertTrue(true, "사각 향렬일때 연산에 실패했다.");
+                test.assertTrue(true, "사각 향렬이 아닐때 연산에 실패했다.");
             }
         });
 
@@ -342,7 +342,7 @@ class MatrixTest extends BaseTest {
                 dummy.isLowerTriangular();
                 test.assertTrue(false, "사각 향렬일때 연산에 성공했다.");
             } catch (CalculateNotSupportedException e) {
-                test.assertTrue(true, "사각 향렬일때 연산에 실패했다.");
+                test.assertTrue(true, "사각 향렬이 아닐때 연산에 실패했다.");
             }
         });
 
@@ -362,7 +362,7 @@ class MatrixTest extends BaseTest {
                 dummy2.isIdentity();
                 test.assertTrue(false, "사각 향렬일때 연산에 성공했다.");
             } catch (CalculateNotSupportedException e) {
-                test.assertTrue(true, "사각 향렬일때 연산에 실패했다.");
+                test.assertTrue(true, "사각 향렬이 아닐때 연산에 실패했다.");
             }
         });
 
@@ -373,7 +373,7 @@ class MatrixTest extends BaseTest {
             test.assertEquals(dummy.isZero(), true, "영 행렬일때 참이 나왔다.");
 
             dummy.set(dummySize - 1, 0, Factory.createScalarFromInitialValue(1.0));
-            test.assertEquals(dummy.isIdentity(), false, "영 행렬이 아닐때 거짓이 나왔다.");
+            test.assertEquals(dummy.isZero(), false, "영 행렬이 아닐때 거짓이 나왔다.");
         });
 
         test.addTest("행렬은 특정 두 행의 위치를 맞교환할 수 있다.", () -> {
