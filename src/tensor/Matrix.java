@@ -59,6 +59,10 @@ public interface Matrix extends Cloneable {
 
     Matrix getInverse() throws CalculateNotSupportedException;
 
+    Object clone();
+
+    Size size();
+
     void set(int row, int col, Scalar value) throws IndexOutOfBoundsException;
 
     boolean isRREF();
@@ -71,8 +75,4 @@ public interface Matrix extends Cloneable {
     boolean isIdentity() throws CalculateNotSupportedException;
 
     boolean isZero();
-
-    Object clone();
-
-    Size size();
 }
