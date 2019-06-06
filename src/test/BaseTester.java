@@ -1,6 +1,7 @@
 package test;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BaseTester {
     private int assertPassCounter;
@@ -9,20 +10,17 @@ public class BaseTester {
     private int testPassCounter;
     private int testFailCounter;
 
-    private ArrayList<TestFunc> tests;
-    private ArrayList<String> testNames;
+    private Map<String, TestFunc> tests;
 
     private String name;
 
     BaseTester(String name) {
         this.name = name;
-        tests = new ArrayList<>();
-        testNames = new ArrayList<>();
+        tests = new HashMap<>();
     }
 
     void addTest(String name, TestFunc test) {
-        tests.add(test);
-        testNames.add(name);
+        tests.put(name, test);
     }
 
     void test() {
@@ -31,8 +29,8 @@ public class BaseTester {
 
         startTests();
 
-        for (int i = 0; i < tests.size(); i++) {
-            individualTest(testNames.get(i), tests.get(i));
+        for (Map.Entry<String, TestFunc> test : tests.entrySet()) {
+            individualTest(test.getKey(), test.getValue());
         }
 
         finishTests();
