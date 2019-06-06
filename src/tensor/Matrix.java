@@ -74,7 +74,5 @@ public interface Matrix extends Cloneable {
 
     Object clone();
 
-    void clear(Scalar value);
-
     Size size();
 }

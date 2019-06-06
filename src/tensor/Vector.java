@@ -9,8 +9,6 @@ public interface Vector extends Cloneable {
 
     void set(int index, Scalar value) throws IndexOutOfBoundsException;
 
-    void clear(Scalar value);
-
     Object clone();
 
     Matrix toMatrix1xN();
