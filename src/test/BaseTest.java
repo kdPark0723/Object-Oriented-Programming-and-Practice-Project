@@ -2,8 +2,8 @@ package test;
 
 import java.util.ArrayList;
 
-public class BaseTest {
-    ArrayList<BaseTester> tests;
+class BaseTest {
+    private ArrayList<BaseTester> tests;
 
     BaseTest() {
         tests = new ArrayList<>();

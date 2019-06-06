@@ -2,7 +2,7 @@ package test;
 
 import tensor.*;
 
-public class FactoryTest extends BaseTest{
+class FactoryTest extends BaseTest {
     FactoryTest() {
         addScalarTests("스칼라의 생성 (default 접근 지정자 사용)");
         addVectorTests("벡터의 생성 (default 접근 지정자 사용)");
