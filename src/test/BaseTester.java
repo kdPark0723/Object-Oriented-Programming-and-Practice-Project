@@ -39,6 +39,7 @@ class BaseTester {
     private void startTests() {
         System.out.println(this.name + " [Total: " + tests.size() + "] is started.");
     }
+
     private void finishTests() {
         System.out.println(this.name + " [Pass: " + testPassCounter + ", Fail: " + testFailCounter + "] is finished.\n");
     }
@@ -86,6 +87,7 @@ class BaseTester {
             failed(testName, lhs.toString() + " is equal " + rhs.toString() + ", It throw Exception " + exception.getMessage());
         }
     }
+
     void assertTrue(boolean condition, String testName) {
         if (condition)
             passed(testName);

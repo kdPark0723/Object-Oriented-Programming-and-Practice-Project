@@ -308,11 +308,11 @@ class MatrixTest extends BaseTest {
 
             for (int i = 0; i < dummySize; ++i)
                 for (int j = 0; j < dummySize; ++j)
-                    if (i > j)
+                    if (i < j)
                         triangular.set(i, j, Factory.createScalarFromInitialValue(1.0));
             test.assertEquals(triangular.isUpperTriangular(), true, "상삼각 행렬일때 참이 나왔다.");
 
-            triangular.set(0, dummySize - 1, Factory.createScalarFromInitialValue(1.0));
+            triangular.set(dummySize - 1, 0, Factory.createScalarFromInitialValue(1.0));
             test.assertEquals(triangular.isUpperTriangular(), false, "상삼각 행렬이 아닐때 거짓이 나왔다.");
 
             Matrix dummy = Factory.createMatrixFromInitialValue(dummySize, dummySize + 10, Factory.createScalarFromInitialValue(1.0));
@@ -330,11 +330,11 @@ class MatrixTest extends BaseTest {
 
             for (int i = 0; i < dummySize; ++i)
                 for (int j = 0; j < dummySize; ++j)
-                    if (i < j)
+                    if (i > j)
                         triangular.set(i, j, Factory.createScalarFromInitialValue(1.0));
             test.assertEquals(triangular.isLowerTriangular(), true, "하삼각 행렬일때 참이 나왔다.");
 
-            triangular.set(dummySize - 1, 0, Factory.createScalarFromInitialValue(1.0));
+            triangular.set(0, dummySize - 1, Factory.createScalarFromInitialValue(1.0));
             test.assertEquals(triangular.isLowerTriangular(), false, "하삼각 행렬이 아닐때 거짓이 나왔다.");
 
             Matrix dummy = Factory.createMatrixFromInitialValue(dummySize, dummySize + 10, Factory.createScalarFromInitialValue(1.0));
