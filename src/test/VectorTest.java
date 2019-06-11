@@ -71,8 +71,12 @@ class VectorTest extends BaseTest {
         test.addTest("객체 복제를 할 수 있다", () -> {
             int dummySize = 10;
             Vector dummy = Factory.createVectorFromInitialValue(dummySize, Factory.createScalarFromInitialValue(1.0));
+            Vector cloned = dummy.clone();
 
-            test.assertEquals(dummy, dummy.clone(), "복체된 객체와 원래 객체의 동등성 판단에 성공했다");
+            test.assertEquals(dummy, cloned, "복체된 객체와 원래 객체의 동등성 판단에 성공했다");
+
+            cloned.set(0, Factory.createScalarFromInitialValue(0.0));
+            test.assertTrue(!dummy.equals(cloned), "복제된 객체와 기본의 객체가 다른 객체이다");
         });
     }
 

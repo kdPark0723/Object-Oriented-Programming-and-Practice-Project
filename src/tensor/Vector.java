@@ -6,7 +6,7 @@ public interface Vector extends Cloneable {
 
     Scalar get(int index) throws IndexOutOfBoundsException;
 
-    Object clone();
+    Vector clone();
 
     int size();
 

@@ -59,7 +59,7 @@ public interface Matrix extends Cloneable {
 
     Matrix getInverse() throws CalculateNotSupportedException;
 
-    Object clone();
+    Matrix clone();
 
     Size size();
 

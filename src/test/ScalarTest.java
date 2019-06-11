@@ -42,7 +42,12 @@ class ScalarTest extends BaseTest {
 
         test.addTest("객체 복제를 할 수 있다", () -> {
             Scalar dummy = Factory.createScalarFromInitialValue(1.0);
-            test.assertEquals(dummy, dummy.clone(), "복제된 객체와 기본의 객체가 동등성 판단에 성공했다");
+            Scalar cloned = dummy.clone();
+
+            test.assertEquals(dummy, cloned, "복제된 객체와 기본의 객체가 동등성 판단에 성공했다");
+
+            cloned.set(0.0);
+            test.assertTrue(!dummy.equals(cloned), "복제된 객체와 기본의 객체가 다른 객체이다");
         });
     }
 

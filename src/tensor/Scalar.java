@@ -10,5 +10,5 @@ public interface Scalar extends Comparable<Scalar>, Cloneable {
     Double get();
     void set(Double value);
 
-    Object clone();
+    Scalar clone();
 }
