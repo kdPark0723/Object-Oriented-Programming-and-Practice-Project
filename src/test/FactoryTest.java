@@ -23,7 +23,7 @@ class FactoryTest extends BaseTest {
         });
 
         test.addTest("i 이상 j 미만의 무작위 값을 요소로 하는 스칼라를 생성할 수 있다", () -> {
-            Scalar scalarCreateByRandomValue = Factory.createScalarFromRandomValue(1.0, 100.0);
+            Factory.createScalarFromRandomValue(1.0, 100.0);
             test.assertTrue(true, "예외 없이 스칼라가 생성됨");
         });
     }

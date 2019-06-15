@@ -29,9 +29,8 @@ class BaseTester {
 
         startTests();
 
-        for (Map.Entry<String, TestFunc> test : tests.entrySet()) {
+        for (Map.Entry<String, TestFunc> test : tests.entrySet())
             individualTest(test.getKey(), test.getValue());
-        }
 
         finishTests();
     }
