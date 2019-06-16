@@ -34,9 +34,9 @@ class ScalarTest extends BaseTest {
 
         test.addTest("값의 대소 비교를 할 수 있다", () -> {
             Scalar dummy = Factory.createScalarFromInitialValue(1.0);
-            test.assertEquals(dummy.compareTo(Factory.createScalarFromInitialValue(2.0)), 1, "더 큰 값과 compareTo 연산을 했을때 결과가 1인 것을 확인 할 수 있다");
+            test.assertEquals(dummy.compareTo(Factory.createScalarFromInitialValue(2.0)), -1, "더 큰 값과 compareTo 연산을 했을때 결과가 1인 것을 확인 할 수 있다");
             test.assertEquals(dummy.compareTo(Factory.createScalarFromInitialValue(1.0)), 0, "동일 값과 compareTo 연산을 했을때 결과가 0인 것을 확인 할 수 있다");
-            test.assertEquals(dummy.compareTo(Factory.createScalarFromInitialValue(0.0)), -1, "더 작은 값과 compareTo 연산을 했을때 결과가 -1인 것을 확인 할 수 있다");
+            test.assertEquals(dummy.compareTo(Factory.createScalarFromInitialValue(0.0)), 1, "더 작은 값과 compareTo 연산을 했을때 결과가 -1인 것을 확인 할 수 있다");
 
         });
 
